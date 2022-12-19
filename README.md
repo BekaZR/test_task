@@ -1,4 +1,4 @@
-# test_task
+# TEST_TASK
 
 # Start project:
   1) Start docker machine on your PC
