@@ -26,9 +26,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="medic API",
+        title="test API",
         default_version="v1",
-        description="medic api",
+        description="test api",
         terms_of_service="",
         contact=openapi.Contact(email="abdyldaevgroup@gmail.com"),
         license=openapi.License(name="BSD License"),
