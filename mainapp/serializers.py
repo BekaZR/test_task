@@ -21,10 +21,8 @@ class EntitySerializer(serializers.ModelSerializer):
 
 class EntityGetSerializer(serializers.ModelSerializer):
     properties = PropertySerializer(read_only=True, many=True)
-    
     class Meta:
         model = Entity
         fields = ("id", "modified_by", "value", "properties")
-
 
 

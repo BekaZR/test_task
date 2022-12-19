@@ -14,7 +14,7 @@ class Property(models.Model):
 
 class Entity(models.Model):
     modified_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="entities"
+        User, on_delete=models.CASCADE, related_name="entities", null=True, blank=True
         )
     value = models.IntegerField()
     properties = models.ManyToManyField(
@@ -22,4 +22,4 @@ class Entity(models.Model):
         )
 
     def __str__(self):
-        return self.modified_by.username
+        return f"{self.value}"
