@@ -8,7 +8,7 @@
   5) Go to localhost in your browser (without port 8000, nginx was connected)
   6) Project was successful started
 
-# API
+# API You need to login
   1) For create superuser 
      - Run command **"sudo docker ps"** or **"sudo docker container ls"**(when project in docker started)
      - Seach container with name **web_test** and copy his CONTAINER ID
