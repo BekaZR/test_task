@@ -19,3 +19,12 @@ class EntitySerializer(serializers.ModelSerializer):
         read_only_fields = ("modified_by",)
 
 
+class EntityGetSerializer(serializers.ModelSerializer):
+    properties = PropertySerializer(read_only=True, many=True)
+    
+    class Meta:
+        model = Entity
+        fields = ("id", "modified_by", "value", "properties")
+
+
+

@@ -18,7 +18,7 @@ class Entity(models.Model):
         )
     value = models.IntegerField()
     properties = models.ManyToManyField(
-        Property, related_name="entities"
+        Property, related_name="properties"
         )
 
     def __str__(self):
