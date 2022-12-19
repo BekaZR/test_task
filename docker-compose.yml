@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+
+  web:
+    container_name: web_test
+    restart: unless-stopped
+    build:
+      context: .
+    volumes:
+        - static/:/static
+        - media/:/media
+        - ./:/app
+    entrypoint: ./wsgi-entrypoint.sh
+    ports:
+      - "8000:8000"
+    networks:
+      - my-network
+
+  nginx:
+    container_name: nginx_test
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./static/:/static
+      - ./media/:/media
+    networks:
+      - my-network
+    depends_on:
+      - web
+
+volumes:
+  media:
+  static:
+
+networks:
+  my-network:
